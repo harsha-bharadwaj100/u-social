@@ -1,0 +1,14 @@
+---
+// src/pages/posts.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Post from '../components/Post.astro';
+import { BACKEND_URL } from '../consts';
+
+const response = await fetch(`${BACKEND_URL}/posts`); // Replace with your actual endpoint
+const posts = await response.json();
+---
+
+<BaseLayout title="Posts">
+    <h1>Posts</h1>
+    {posts.map((post) => <Post post={post} />)}
+</BaseLayout>

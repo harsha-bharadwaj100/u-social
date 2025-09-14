@@ -8,3 +8,4 @@ __pycache__/
 *.py[oc]
 *.egg-info
 
+*test*.ps1
